@@ -2,7 +2,7 @@
 Splunk Otel Collector - How to change allocated memory
 
 **1. Host-based**
-- To configure memory allocation, you might need to change the --memory parameter. Set SPLUNK_MEMORY_TOTAL_MIB by increasing a setting in 
+- To configure memory allocation, you might need to change the --memory parameter. Set `SPLUNK_MEMORY_TOTAL_MIB` by increasing a setting in 
 ``` 
 curl -sSL https://dl.signalfx.com/splunk-otel-collector.sh > /tmp/splunk-otel-collector.sh;
 sudo sh /tmp/splunk-otel-collector.sh --realm SPLUNK_REALM --memory SPLUNK_MEMORY_TOTAL_MIB \
