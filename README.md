@@ -9,8 +9,8 @@ sudo sh /tmp/splunk-otel-collector.sh --realm SPLUNK_REALM --memory SPLUNK_MEMOR
     -- SPLUNK_ACCESS_TOKEN"
 ```
 This value will be used to auto-calculate and set other Memory settings for memory limiter and ballast.
-- SPLUNK_MEMORY_TOTAL_MIB is actually 90% of SPLUNK_MEMORY_LIMIT_MIB  unless the env variable is already set https://github.com/signalfx/splunk-otel-collector/blob/3636a7832101f903bfb5b8f27913e8689b30ef23/cmd/otelcol/main.go#L59
-- Same applies to memory ballast SPLUNK_BALLAST_SIZE_MIB, which is set to 33% of the memory limit - https://github.com/signalfx/splunk-otel-collector/blob/3636a7832101f903bfb5b8f27913e8689b30ef23/cmd/otelcol/main.go#L58
+- SPLUNK_MEMORY_LIMIT_MIB is actually 90% of SPLUNK_MEMORY_TOTAL_MIB  unless the env variable is already set https://github.com/signalfx/splunk-otel-collector/blob/3636a7832101f903bfb5b8f27913e8689b30ef23/cmd/otelcol/main.go#L59
+- Same applies to memory ballast SPLUNK_BALLAST_SIZE_MIB, which is set to 33% of the total memory - https://github.com/signalfx/splunk-otel-collector/blob/3636a7832101f903bfb5b8f27913e8689b30ef23/cmd/otelcol/main.go#L58
 
 **2. K8s-based**
 - To limit memory you can change as following,
